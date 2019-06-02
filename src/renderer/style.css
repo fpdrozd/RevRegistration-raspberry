@@ -1,1 +1,148 @@
-/* Styles here */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  font-size: 20px;
+}
+
+.box {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.wrapper {
+  clear: both;
+  width: 200vw;
+  height: 100vh;
+}
+
+.box--recognition .reception,
+.box--recognition .recognition {
+  left: -100vw;
+}
+.reception, .recognition {
+  float: left;
+  left: 0;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.reception {
+  background-image: url("images/revregistration.png");
+  background-repeat: no-repeat;
+  background-size: 30%;
+  background-position: center;
+}
+.box--loading .reception {
+  background-image: none;
+}
+
+.reception_loading {
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.box--loading .reception_loading {
+  display: flex;
+}
+.reception_loading_text {
+  padding: 20px;
+  font-size: 1.1em;
+}
+
+.recognition {
+  box-sizing: border-box;
+  padding-top: calc((100vh - 120px) / 2);
+  padding-left: 40px;
+}
+
+.recognition_fingerprint {
+  float: left;
+  width: 120px;
+  height: 120px;
+}
+
+.recognition_fingerprint_match {
+  cursor: pointer;
+  margin-left: 50%;
+  margin-top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+.recognition--unknown .recognition_fingerprint_match { display: none; }
+.recognition_fingerprint_line {
+  fill: none;
+  stroke: #3871c2;
+  stroke-dashoffset: 0;
+  stroke-width: 1;
+  transition: all 300ms ease;
+}
+.recognition_fingerprint_line.active { animation: drawFingerprint 6s forwards; }
+.recognition_fingerprint_line--a { stroke-dasharray: 12.15426; }
+.recognition_fingerprint_line--b { stroke-dasharray: 19.79116; }
+.recognition_fingerprint_line--c { stroke-dasharray: 53.00725; }
+.recognition_fingerprint_line--d { stroke-dasharray: 23.70178; }
+.recognition_fingerprint_line--e { stroke-dasharray: 8.83748; }
+@keyframes drawFingerprint {
+  20% { stroke-dashoffset: 40; }
+  40% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.recognition_fingerprint_unknown { width: 120px; display: none; }
+.recognition--unknown .recognition_fingerprint_unknown { display: block; }
+
+.recognition_person {
+  height: 100px;
+  width: calc(100vw - 120px - 70px - 40px);
+  float: left;
+  margin: 0;
+  padding-left: 30px;
+  padding-top: 10px;
+  font-size: 36px;
+  line-height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.recognition_person span {
+  display: block;
+  padding-right: 10px;
+}
+
+.loading {
+  display: block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.loading::after, .loading::before {
+  display: block;
+  content: '';
+  position: absolute;
+  border: 4px solid #fff;
+  opacity: 1;
+  border-radius: 50%;
+  background-color: #0061ff;
+  animation: loading 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.loading::before {
+  animation-delay: -0.5s;
+}
+@keyframes loading {
+  0% {
+    top: 28px;
+    left: 28px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: -1px;
+    left: -1px;
+    width: 58px;
+    height: 58px;
+    opacity: 0;
+  }
+}
