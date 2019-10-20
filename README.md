@@ -79,7 +79,7 @@ For now, if you want to enroll a new finger you have to do it manually by runnin
 Now you are ready to install the RevRegistration app. First you have to build it using node.js and yarn (we recommend doing this on your desktop). You can download node.js with npm [here](https://nodejs.org/en/download/) and optionally yarn [here](https://yarnpkg.com/en/docs/getting-started).
 ##### Clone the repository:
 ```
-~$ git clone https://github.com/fpdrozd/revregistration.git
+~$ git clone https://github.com/fpdrozd/revregistration-raspberry.git
 ```
 ##### Install dependencies
 ```
